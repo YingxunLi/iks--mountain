@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How do mountains form?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Saira 字体 -->
+  <link href="https://fonts.googleapis.com/css?family=Saira:400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- model-viewer for glb -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <div class="stage">
+    <!-- 背景图始终铺满 -->
+    <div class="background"></div>
+    <!-- 所有页面容器 -->
+    <div class="pages">
+      <!-- 1.1 首页 -->
+      <div class="page page-1-1 active">
+        <div class="media right-img">
+          <img src="assets/1.1.png" alt="Intro Image">
+        </div>
+        <div class="info title-group">
+          <h1 class="main-title">How do mountains form?</h1>
+          <h2 class="subtitle">Create your own mountain and see the process for yourself!</h2>
+        </div>
+        <button class="btn btn-main" data-next="1-2">start</button>
+      </div>
+      <!-- 1.2 -->
+      <div class="page page-1-2">
+        <div class="media full-img">
+          <img src="assets/1.2.png" alt="Earth Layers">
+        </div>
+        <div class="info text-top">
+          This is the Earth. It has many layers under the surface, and everything is constantly in motion.
+        </div>
+        <button class="btn btn-main" data-next="1-3">next</button>
+      </div>
+      <!-- 1.3 -->
+      <div class="page page-1-3">
+        <div class="info text-top">
+          <div class="small-title">Plate Drift</div>
+          <div class="text">Move the plates closer together!</div>
+        </div>
+        <div class="media drag-imgs">
+          <img class="draggable plate-img" src="assets/1.3.1.png" data-index="0" alt="Plate 1">
+          <img class="draggable plate-img" src="assets/1.3.2.png" data-index="1" alt="Plate 2">
+        </div>
+        <video class="webm-anim" src="assets/1.3.webm" preload="auto"></video>
+        <button class="btn btn-main" data-next="1-4">next</button>
+      </div>
+      <!-- 1.4 -->
+      <div class="page page-1-4">
+        <div class="info text-top">
+          <div class="small-title">xxx</div>
+          <div class="text">xxxxxxxxx!</div>
+        </div>
+        <div class="media drag-imgs">
+          <img class="draggable plate-img" src="assets/1.4.1.png" data-index="0" alt="Plate 1">
+          <img class="draggable plate-img" src="assets/1.4.2.png" data-index="1" alt="Plate 2">
+        </div>
+        <video class="webm-anim" src="assets/1.4.webm" preload="auto"></video>
+        <button class="btn btn-main" data-next="2-1">next</button>
+      </div>
+      <!-- 2.1 -->
+      <div class="page page-2-1">
+        <video class="webm-anim full-bg" src="assets/2.1.mp4" preload="auto"></video>
+        <div class="info text-center-top">
+          Now, let’s see you create your own mountain!
+        </div>
+        <button class="btn btn-main" data-next="2-2">create</button>
+      </div>
+      <!-- 2.2 -->
+      <div class="page page-2-2">
+        <video class="webm-anim full-bg" src="assets/2.1.mp4" preload="auto"></video>
+        <div class="media side-imgs">
+          <img class="selectable" src="assets/2.2.1.png" data-index="0" alt="Step 1">
+          <img class="selectable" src="assets/2.2.2.png" data-index="1" alt="Step 2">
+          <img class="selectable" src="assets/2.2.3.png" data-index="2" alt="Step 3">
+        </div>
+        <button class="btn btn-main" data-next="2-3" style="display:none;">next</button>
+      </div>
+      <!-- 2.3 -->
+      <div class="page page-2-3">
+        <video class="webm-anim full-bg" src="assets/2.3.mp4" preload="auto"></video>
+        <div class="media side-imgs">
+          <img class="selectable" src="assets/2.3.1.png" data-index="0" alt="Step 1">
+          <img class="selectable" src="assets/2.3.2.png" data-index="1" alt="Step 2">
+          <img class="selectable" src="assets/2.3.3.png" data-index="2" alt="Step 3">
+        </div>
+        <button class="btn btn-main" data-next="2-4" style="display:none;">next</button>
+      </div>
+      <!-- 2.4 -->
+      <div class="page page-2-4">
+        <video class="webm-anim full-bg" src="assets/2.4.mp4" preload="auto"></video>
+        <div class="media side-imgs">
+          <img class="selectable" src="assets/2.4.1.png" data-index="0" alt="Step 1">
+          <img class="selectable" src="assets/2.4.2.png" data-index="1" alt="Step 2">
+          <img class="selectable" src="assets/2.4.3.png" data-index="2" alt="Step 3">
+        </div>
+        <button class="btn btn-main" data-next="3" style="display:none;">next</button>
+      </div>
+      <!-- 3 -->
+      <div class="page page-3">
+        <video class="webm-anim full-bg" src="assets/3.webm" preload="auto"></video>
+        <div class="media glb-viewer" style="display:none;">
+          <model-viewer src="assets/3.glb" camera-controls auto-rotate background-color="#fff"></model-viewer>
+        </div>
+        <button class="btn btn-main" data-next="4" style="display:none;">more information</button>
+      </div>
+      <!-- 4 -->
+      <div class="page page-4">
+        <video class="webm-anim full-bg" src="assets/4.webm" preload="auto" loop></video>
+        <div class="media info-circles">
+          <!-- 三个光圈，js随机定位 -->
+          <div class="circle" data-index="0"></div>
+          <div class="circle" data-index="1"></div>
+          <div class="circle" data-index="2"></div>
+        </div>
+        <!-- 动画播放层 -->
+        <video class="webm-anim info-anim" style="display:none;" preload="auto"></video>
+        <!-- 信息box -->
+        <div class="info info-box" style="display:none;">
+          <div class="small-title">Climate</div>
+          <div class="main-title">Wet & Erosive</div>
+          <div class="text">Heavy rainfall contributes to deep valleys and sharp ridges.</div>
+        </div>
+        <!-- 右上角关闭按钮 -->
+        <button class="btn btn-close" style="display:none;">×</button>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
