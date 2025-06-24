@@ -148,20 +148,21 @@ body, html {
 
 /* 侧边图片组 */
 .media.side-imgs {
-  right: 5vw;
+  right: 10vw;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
+  background: transparent;
   gap: 2vh;
 }
 
 /* 可选择图片（如选项） */
 .selectable {
-  width: 10vw;
-  max-width: 120px;
+  width: 200vw;
+  max-width: 400px;
   border-radius: 1em;
-  background: #fff;
+  background: rgba(255,255,255,0.1);
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   cursor: pointer;
   opacity: 1;
